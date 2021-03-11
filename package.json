@@ -1,0 +1,27 @@
+{
+  "name": "good-morning-notification-bot",
+  "version": "1.0.0",
+  "description": "A Bot to Notify You Good Morning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"no tests implemented\"",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/douglasffilho/good-morning-bot.git"
+  },
+  "keywords": [
+    "good",
+    "morning",
+    "slack",
+    "notification",
+    "bot"
+  ],
+  "author": "Douglas Filho",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/douglasffilho/good-morning-bot/issues"
+  },
+  "homepage": "https://github.com/douglasffilho/good-morning-bot#readme"
+}
