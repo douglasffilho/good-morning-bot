@@ -27,11 +27,11 @@ const getImageFromWebPage = (response) => {
 };
 
 const ImageScrapperService = {
-    async getImageUrl(dayOfWeek) {
+    async getImageUrl(dayOfWeek, baseLocation) {
         const searchLocation =
             {
                 FRI: 'sexta-feira'
-            }[dayOfWeek] || '';
+            }[dayOfWeek] || baseLocation;
 
         return requests
             .get(`/${searchLocation}`)
