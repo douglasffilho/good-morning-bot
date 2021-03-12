@@ -1,2 +1,2 @@
 # good-morning-bot
-A Bot to Notify You Good Morning
+A Slack Bot to Notify Your Channels Random Good Morning Messages

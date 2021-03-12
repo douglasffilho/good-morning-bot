@@ -1,7 +1,7 @@
 {
   "name": "good-morning-notification-bot",
   "version": "1.0.0",
-  "description": "A Bot to Notify You Good Morning",
+  "description": "A Slack Bot to Notify Your Channels Random Good Morning Messages",
   "main": "index.js",
   "scripts": {
     "test": "echo \"no tests implemented\"",
@@ -23,5 +23,12 @@
   "bugs": {
     "url": "https://github.com/douglasffilho/good-morning-bot/issues"
   },
-  "homepage": "https://github.com/douglasffilho/good-morning-bot#readme"
+  "homepage": "https://github.com/douglasffilho/good-morning-bot#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.5",
+    "debug": "^4.3.1",
+    "express": "^4.17.1",
+    "node-schedule": "^2.0.0"
+  }
 }
