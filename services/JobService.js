@@ -15,10 +15,7 @@ const JobService = {
 
         schedule.scheduleJob(rule, () => {
             const now = new Date();
-            log.info(
-                'using bot %o to say GOOD MORNING',
-                config.slackBotName
-            );
+            log.info('using bot to say GOOD MORNING');
             const dayOfWeek = now.toString().substring(0, 3).toUpperCase();
 
             SlackService.sayGoodMorning(dayOfWeek);
