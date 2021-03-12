@@ -17,7 +17,7 @@ const getGoodMorningRule = () => {
 };
 
 const getGoodAfternoon = () => {
-    return generateRule(13, 0);
+    return generateRule(17, 48);
 };
 
 const getGoodNight = () => {
@@ -41,23 +41,26 @@ const JobService = {
             {
                 rule: getGoodMorningRule(),
                 exec: SlackService.sayGoodMorning,
-                name: 'GOOD MORNING'
+                name: 'GOOD MORNING',
+                enabled: config.goodMorningEnabled
             },
             {
                 rule: getGoodAfternoon(),
-                exec: SlackService.sayGoodMorning,
-                name: 'GOOD AFTERNOON'
+                exec: SlackService.sayGoodAfternnon,
+                name: 'GOOD AFTERNOON',
+                enabled: config.goodAfternoonEnabled
             },
             {
                 rule: getGoodNight(),
-                exec: SlackService.sayGoodMorning,
-                name: 'GOOD NIGHT'
+                exec: SlackService.sayGoodNight,
+                name: 'GOOD NIGHT',
+                enabled: config.goodNightEnabled
             }
         ];
         execs.forEach((execution) => {
-            const { rule, exec, name } = execution;
+            const { rule, exec, name, enabled } = execution;
 
-            scheduleService(rule, exec, name);
+            if (enabled) scheduleService(rule, exec, name);
         });
     }
 };
