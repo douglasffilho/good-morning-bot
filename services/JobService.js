@@ -17,11 +17,11 @@ const getGoodMorningRule = () => {
 };
 
 const getGoodAfternoon = () => {
-    return generateRule(17, 48);
+    return generateRule(13, 0);
 };
 
 const getGoodNight = () => {
-    return generateRule(19, 0);
+    return generateRule(18, 30);
 };
 
 const scheduleService = (rule, execute, name) => {
