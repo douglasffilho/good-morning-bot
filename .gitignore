@@ -1,5 +1,15 @@
 node_modules
+*/node_modules
 yarn.lock
+*/yarn.lock
 package-lock.json
+*/package-lock.json
 yarn-error.log
+*/yarn-error.log
 start.sh
+
+# CDK asset staging directory
+.cdk.staging
+*/.cdk.staging
+cdk.out
+*/cdk.out
