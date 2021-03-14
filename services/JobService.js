@@ -1,5 +1,6 @@
 const schedule = require('node-schedule');
 const config = require('../config');
+const DateUtil = require('../utils/DateUtil');
 const SlackService = require('./SlackService');
 const log = require('../utils/Log')('JobService');
 
@@ -27,9 +28,9 @@ const getGoodNight = () => {
 const scheduleService = (rule, execute, name) => {
     log.info('scheduling %o', name);
     schedule.scheduleJob(rule, () => {
-        const now = new Date();
         log.info('using bot to say %o', name);
-        const dayOfWeek = now.toString().substring(0, 3).toUpperCase();
+
+        const dayOfWeek = DateUtil.getDayOfWeek();
 
         execute(dayOfWeek);
     });

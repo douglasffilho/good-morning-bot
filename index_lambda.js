@@ -1,8 +1,25 @@
 const SlackService = require('./services/SlackService');
+const DateUtil = require('./utils/DateUtil');
+const log = require('./utils/Log')('LambdaExecution');
 
-exports.handler =  async function(event, context) {
-    console.log("EVENT: \n" + JSON.stringify(event, null, 2))
-    dayOfWeek = new Date().toString().substring(0, 3).toUpperCase()
-    return SlackService.sayGoodMorning(dayOfWeek)
-  }
-  
+const execs = {
+    'GOOD-MORNING': (dayOfWeek) => {
+        SlackService.sayGoodMorning(dayOfWeek);
+    },
+    'GOOD-AFTERNOON': (dayOfWeek) => {
+        SlackService.sayGoodAfternnon(dayOfWeek);
+    },
+    'GOOD-NIGHT': (dayOfWeek) => {
+        SlackService.sayGoodNight(dayOfWeek);
+    }
+};
+
+exports.handler = async (event, context) => {
+    log.info('Slack Notification Event triggered');
+
+    const dayOfWeek = await DateUtil.getDayOfWeek();
+    const dayTime = await DateUtil.getDayTime();
+    const exec = `GOOD-${dayTime}`;
+
+    return execs[exec](dayOfWeek);
+};
