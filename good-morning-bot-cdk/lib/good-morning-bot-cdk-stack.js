@@ -24,7 +24,7 @@ class GoodMorningBotCdkStack extends cdk.Stack {
         handler: 'index_lambda.handler',
         environment: {
             'DEBUG': 'app:*',
-            'SLACK_TOKEN': secretSlackToken
+            'SLACK_TOKEN': secretSlackToken.secretValue.toString()
         }
     });
 
