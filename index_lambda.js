@@ -15,7 +15,7 @@ const execs = {
 };
 
 exports.handler = async (event, context) => {
-    log.info('Slack Notification Event triggered');
+    log.info('Slack Notification Event triggered: %o', event);
 
     const dayOfWeek = await DateUtil.getDayOfWeek();
     const dayTime = await DateUtil.getDayTime();
