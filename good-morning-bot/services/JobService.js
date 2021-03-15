@@ -6,7 +6,7 @@ const log = require('../utils/Log')('JobService');
 
 const generateRule = (hour, minute) => {
     const rule = new schedule.RecurrenceRule();
-    rule.dayOfWeek = [0, new schedule.Range(1, 5)];
+    rule.dayOfWeek = [0, new schedule.Range(1, 4)];
     rule.hour = hour;
     rule.minute = minute;
 
