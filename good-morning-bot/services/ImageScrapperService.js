@@ -19,7 +19,7 @@ const getImageFromWebPage = (response) => {
     });
 
     if (images.length > 0) {
-        const index = Math.floor(Math.random() * images.length + 1);
+        const index = Math.floor(Math.random() * (images.length - 1));
         return images[index];
     }
 
