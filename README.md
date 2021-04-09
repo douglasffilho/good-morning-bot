@@ -10,7 +10,7 @@ A Slack Bot to Notify Your Channels Random Good Morning Messages
   DEBUG=app:* SLACK_TOKEN=<slack bot token with chat permissions> PORT=<app run port (8081 is default value)> GOOD_MORNING_ENABLED=true GOOD_AFTERNOON_ENABLED=true GOOD_NIGHT_ENABLED=true yarn start
 
   ```
-  - ***AWS Lambda Version*** (Requires NodeJS Environment)
+- ***AWS Lambda Version*** (Requires NodeJS Environment)
   ```bash
   npm install -g yarn &&/
   npm install -g cdk &&/
