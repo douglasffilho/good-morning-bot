@@ -13,7 +13,6 @@ const getImageFromWebPage = (response) => {
 
     $('img').each((idx, element) => {
         const image = $(element).attr()['data-src'];
-
         if (image && !image.includes('logo') && image.includes(imagesStorageUrl))
             images.push(image);
     });
@@ -34,7 +33,7 @@ const ImageScrapperService = {
             }[dayOfWeek] || baseLocation;
 
         return requests
-            .get(`/${searchLocation}`)
+            .get(`/${searchLocation}.html`)
             .then(getImageFromWebPage)
             .catch((error) => {
                 log.error('%o', error);
