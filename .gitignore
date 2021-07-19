@@ -13,3 +13,5 @@ start.sh
 */.cdk.staging
 cdk.out
 */cdk.out
+run
+shot
