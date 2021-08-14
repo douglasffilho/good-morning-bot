@@ -1,3 +1,3 @@
 const lambda = require('./index_lambda');
 
-lambda.handler();
+lambda.handler('shot execution');

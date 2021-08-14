@@ -52,7 +52,7 @@ const listChannels = async (foundChannels, cursor) => {
 const sendMessages = async (imageUrl) => {
     return listChannels([]).then(response => {
         const { channels } = response;
-        log.info('%o', channels);
+        log.info('canais: %o', channels.map(c => c.name));
         const channelTalkRequests = channels.map(channel => {
             return requests.post(`/chat.postMessage?as_user=true&channel=${channel.id}&text=${imageUrl}`);
         });
